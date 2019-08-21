@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Page from "../common/Page";
-import subscribeStatus from "../common/util";
+import { subscribeStatus } from "../common/util";
 import useToggle from "../hooks/useToggle";
 
 class SubscribeStatusUsingClass extends React.Component {

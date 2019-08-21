@@ -1,8 +1,9 @@
 import React from "react";
 
 const BasicUseState = React.lazy(() => import("./basic_state/BasicUseState"));
-const ComponentMount = React.lazy(() => import("./effects/Effect"));
+const Effect = React.lazy(() => import("./effects/Effect"));
 const Memo = React.lazy(() => import("./memo/Memo"));
+const Ref = React.lazy(() => import("./ref/Ref"));
 
 const routes = [
   {
@@ -13,12 +14,17 @@ const routes = [
   {
     path: "/2",
     title: "Component mount/unmount/update",
-    Component: ComponentMount
+    Component: Effect
   },
   {
     path: "/3",
     title: "Memoizing",
     Component: Memo
+  },
+  {
+    path: "/4",
+    title: "Ref",
+    Component: Ref
   }
 ];
 
