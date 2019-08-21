@@ -8,11 +8,13 @@ class FormUsingClass extends React.Component {
   saveDisposable = null;
 
   _save = () => {
+    const { firstName, lastName } = this.state;
     this.saveDisposable && this.saveDisposable.dispose();
     this.setState({ isSaving: true });
-    this.saveDisposable = fakeSave({}, () =>
-      this.setState({ isSaving: false })
-    );
+    this.saveDisposable = fakeSave({ firstName, lastName }, response => {
+      console.log(response);
+      this.setState({ isSaving: false });
+    });
   };
 
   render() {
@@ -72,7 +74,8 @@ function Form() {
 
   const save = () => {
     setIsSaving(true);
-    fakeSave({}, () => {
+    fakeSave({ firstName, lastName }, response => {
+      console.log(response);
       setIsSaving(false);
     });
   };

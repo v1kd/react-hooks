@@ -7,16 +7,16 @@ export function subscribeStatus(id, callback) {
     callback(random.boolean());
   }, time);
   return {
-    cancel: () => {
+    dispose: () => {
       clearInterval(intervalID);
       console.log(`Unsubscribed ${id}`);
     }
   };
 }
 
-export function fakeSave(values, callback) {
+export function fakeSave(name, callback) {
   const timeoutID = setTimeout(() => {
-    callback("Success");
+    callback(`Saved ${name.firstName}, ${name.lastName}`);
   }, 2000);
   return {
     dispose: () => clearTimeout(timeoutID)

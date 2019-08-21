@@ -18,7 +18,7 @@ class SubscribeStatusUsingClass extends React.Component {
   }
 
   componentWillUnmount() {
-    this.subscription && this.subscription.cancel();
+    this.subscription && this.subscription.dispose();
   }
 
   render() {
@@ -95,7 +95,7 @@ function SubscribeStatusSolution(props) {
     const subscription = subscribeStatus(props.user, isOnline =>
       setOnline(isOnline)
     );
-    return () => subscription.cancel();
+    return () => subscription.dispose();
   }, [props.user]);
   return (
     <p>
