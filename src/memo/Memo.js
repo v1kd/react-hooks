@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState } from "react";
 import Page from "../common/Page";
 
 // array of values and onClick
@@ -10,7 +10,7 @@ class ExpensiveComponent extends React.PureComponent {
       <div className="list-group">
         {this.props.values.map((value, i) => (
           <a
-            href="#"
+            href="#here"
             onClick={e => {
               e.preventDefault();
               this.props.onClick(value);

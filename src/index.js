@@ -7,7 +7,7 @@ import "./index.css";
 // React test
 // import Page from "./common/Page";
 
-// function render() {
+// function reconcile() {
 //   ReactDOM.render(<TestHooks />, document.getElementById("react-example"));
 // }
 
@@ -17,14 +17,13 @@ import "./index.css";
 //       <Page title="Test">
 //         <Form />
 //       </Page>
-//       ,
 //     </div>
 //   );
 // }
 
 // function Form() {
-//   const firstName = "";
-//   const lastName = "";
+//   const firstName = "Mark";
+//   const lastName = "Zuck";
 //   return (
 //     <>
 //       <p>
@@ -36,7 +35,7 @@ import "./index.css";
 //             className="form-control"
 //             value={firstName}
 //             placeholder="First name"
-//             onChange={() => {}}
+//             onChange={e => {}}
 //           />
 //         </div>
 //         <div className="col-sm">
@@ -44,14 +43,14 @@ import "./index.css";
 //             className="form-control"
 //             value={lastName}
 //             placeholder="Last name"
-//             onChange={() => {}}
+//             onChange={e => {}}
 //           />
 //         </div>
 //       </div>
 //     </>
 //   );
 // }
-// render();
+// reconcile();
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
