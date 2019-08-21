@@ -22,8 +22,8 @@ import "./index.css";
 // }
 
 // function Form() {
-//   const firstName = "Mark";
-//   const lastName = "Zuck";
+//   const firstName = "John";
+//   const lastName = "Doe";
 //   return (
 //     <>
 //       <p>

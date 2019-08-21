@@ -3,7 +3,7 @@ import Page from "../common/Page";
 import useToggle from "../hooks/useToggle";
 
 class FormUsingClass extends React.Component {
-  state = { firstName: "", lastName: "" };
+  state = { firstName: "John", lastName: "Doe" };
 
   render() {
     return (
@@ -41,8 +41,8 @@ useState
 */
 
 function Form() {
-  const firstName = "";
-  const lastName = "";
+  const firstName = "John";
+  const lastName = "Doe";
   return (
     <>
       <p>
@@ -84,8 +84,8 @@ export default function() {
 }
 
 function FormSolution() {
-  const [firstName, firstNameProps] = useFormInput("");
-  const [lastName, lastNameProps] = useFormInput("");
+  const [firstName, firstNameProps] = useFormInput("John");
+  const [lastName, lastNameProps] = useFormInput("Doe");
   return (
     <>
       <p>
