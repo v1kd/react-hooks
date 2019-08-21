@@ -78,8 +78,8 @@ export default function() {
 }
 
 function FormSolution() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstName, firstNameProps] = useFormInput("");
+  const [lastName, lastNameProps] = useFormInput("");
   return (
     <>
       <p>
@@ -88,21 +88,30 @@ function FormSolution() {
       <div className="row">
         <div className="col-sm">
           <input
+            {...firstNameProps}
             className="form-control"
-            value={firstName}
             placeholder="First name"
-            onChange={e => setFirstName(e.target.value)}
           />
         </div>
         <div className="col-sm">
           <input
+            {...lastNameProps}
             className="form-control"
-            value={lastName}
             placeholder="Last name"
-            onChange={e => setLastName(e.target.value)}
           />
         </div>
       </div>
     </>
   );
+}
+
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  return [
+    value,
+    {
+      value,
+      onChange: e => setValue(e.target.value)
+    }
+  ];
 }
