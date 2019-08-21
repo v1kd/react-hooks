@@ -4,6 +4,7 @@ const BasicUseState = React.lazy(() => import("./basic_state/BasicUseState"));
 const ComponentMount = React.lazy(() =>
   import("./component_mount/ComponentMount")
 );
+const Memo = React.lazy(() => import("./memo/Memo"));
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: "/2",
     title: "Component mount/unmount",
     Component: ComponentMount
+  },
+  {
+    path: "/3",
+    title: "Memo",
+    Component: Memo
   }
 ];
 

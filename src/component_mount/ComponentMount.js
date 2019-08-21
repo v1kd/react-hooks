@@ -31,6 +31,12 @@ class SubscribeStatusUsingClass extends React.Component {
   }
 }
 
+/*
+
+useEffect
+
+*/
+
 function SubscribeStatus(props) {
   const isOnline = true;
   return (
