@@ -67,7 +67,7 @@ function Memo() {
 
 export default function() {
   return (
-    <Page title="Memo">
+    <Page title="Memoizing">
       <MemoUsingClass />
       <hr />
       <Memo />
