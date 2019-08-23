@@ -21,9 +21,14 @@ import "./index.css";
 //   );
 // }
 
+// function useState(initialValue) {
+//   return [initialValue, () => {}];
+// }
+
 // function Form() {
-//   const firstName = "John";
-//   const lastName = "Doe";
+//   const [firstName, setFirstName] = useState("John");
+//   const [lastName, setLastName] = useState("Doe");
+
 //   return (
 //     <>
 //       <p>
@@ -35,7 +40,7 @@ import "./index.css";
 //             className="form-control"
 //             value={firstName}
 //             placeholder="First name"
-//             onChange={e => {}}
+//             onChange={e => setFirstName(e.target.value)}
 //           />
 //         </div>
 //         <div className="col-sm">
@@ -43,7 +48,7 @@ import "./index.css";
 //             className="form-control"
 //             value={lastName}
 //             placeholder="Last name"
-//             onChange={e => {}}
+//             onChange={e => setLastName(e.target.value)}
 //           />
 //         </div>
 //       </div>
@@ -51,6 +56,10 @@ import "./index.css";
 //   );
 // }
 // reconcile();
+
+// function useMaxString(initialValue, length) {
+//   return [initialValue, () => {}];
+// }
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
