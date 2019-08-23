@@ -163,7 +163,7 @@ function Time(props) {
 
   return (
     <code className="text-white">
-      {hrs.padStart(2, "0")} {min.padStart(2, "0")} {secs.padStart(2, "0")}{" "}
+      {hrs.padStart(2, "0")}h {min.padStart(2, "0")}m {secs.padStart(2, "0")}s{" "}
       {ms.padStart(3, "0")}
     </code>
   );
