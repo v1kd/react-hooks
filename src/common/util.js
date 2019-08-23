@@ -19,6 +19,9 @@ export function fakeSave(name, callback) {
     callback(`Saved ${name.firstName}, ${name.lastName}`);
   }, 2000);
   return {
-    dispose: () => clearTimeout(timeoutID)
+    dispose: () => {
+      console.log("Disposing, this will not call callback");
+      clearTimeout(timeoutID);
+    }
   };
 }
