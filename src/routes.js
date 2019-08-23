@@ -5,6 +5,7 @@ const Effect = React.lazy(() => import("./effects/Effect"));
 const Memo = React.lazy(() => import("./memo/Memo"));
 const Ref = React.lazy(() => import("./ref/Ref"));
 const CustomHooks = React.lazy(() => import("./custom_hooks/CustomHooks"));
+const StopWatch = React.lazy(() => import("./stop_watch/StopWatch"));
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/5",
     title: "Custom Hooks",
     Component: CustomHooks
+  },
+  {
+    path: "/6",
+    title: "Stop watch",
+    Component: StopWatch
   }
 ];
 
