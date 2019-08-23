@@ -106,7 +106,7 @@ function StopWatch() {
   const { time, start, stop, pause, resume, status } = useStopWatch(
     updateInterval
   );
-  const btnClass = "btn btn-light mb-2 btn-block";
+  const btnClass = "btn btn-block mb-2 btn-light btn-lg";
   return (
     <>
       <div
@@ -139,7 +139,7 @@ function StopWatch() {
           </div>
           <div className="col">
             <input
-              className="form-control"
+              className="form-control form-control-lg"
               value={updateInterval}
               onChange={e => setUpdateInterval(e.target.value)}
             />
