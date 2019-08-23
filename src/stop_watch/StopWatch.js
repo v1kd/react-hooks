@@ -19,9 +19,10 @@ function reducer(state, action) {
   switch (action) {
     case "start":
       if (state.status === "stopped") {
+        const current = Date.now();
         return {
-          startTime: new Date(),
-          endTime: new Date(),
+          startTime: current,
+          endTime: current,
           status: "started"
         };
       }
@@ -29,11 +30,10 @@ function reducer(state, action) {
     case "resume":
       if (state.status === "paused") {
         const { startTime, endTime } = state;
-        const current = new Date();
-        const newStartTime =
-          startTime.getTime() + (current.getTime() - endTime.getTime());
+        const current = Date.now();
+        const newStartTime = startTime + (current - endTime);
         return {
-          startTime: new Date(newStartTime),
+          startTime: new Date(newStartTime).getTime(),
           endTime: current,
           status: "started"
         };
@@ -51,7 +51,7 @@ function reducer(state, action) {
       break;
     case "tick":
       if (state.status === "started") {
-        return { ...state, endTime: new Date() };
+        return { ...state, endTime: Date.now() };
       }
       break;
     default:
@@ -86,10 +86,7 @@ function useStopWatch(updateInterval) {
   const pause = useCallback(() => dispatch("pause"), []);
   const resume = useCallback(() => dispatch("resume"), []);
 
-  const time =
-    startTime != null && endTime != null
-      ? endTime.getTime() - startTime.getTime()
-      : 0;
+  const time = startTime != null && endTime != null ? endTime - startTime : 0;
 
   return {
     time,
